@@ -652,9 +652,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  maxEnergy: 20
-  _energy: 0
-  energyIndicatorInHUD: {fileID: 849604819}
+  energy_Max: 20
+  energy_Current: 0
+  energy_IndicatorInHUD: {fileID: 849604819}
+  state_police: {fileID: 11400000, guid: 9ae6c2f4c446a5742a991cdca69e026c, type: 2}
+  state_criminal: {fileID: 11400000, guid: 5a5a241e489f21c4e95de93a840368e3, type: 2}
+  state_current: {fileID: 11400000, guid: 9ae6c2f4c446a5742a991cdca69e026c, type: 2}
+  sprite: {fileID: 1953984164}
+  spriteColorInCriminal: {r: 1, g: 0.60038334, b: 0.13679248, a: 1}
+  spriteColorInPolice: {r: 0, g: 0.3468349, b: 1, a: 1}
 --- !u!4 &1544725292
 Transform:
   m_ObjectHideFlags: 0
