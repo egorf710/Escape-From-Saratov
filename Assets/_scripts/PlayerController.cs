@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
+    private Vector2 animVec;
 
     [Header("energy")]
     [SerializeField] private float energy_Max = 20;
@@ -27,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public Color spriteColorInCriminal;
     public Color spriteColorInPolice;
 
+    [Header("OtherComponents")]
+    [SerializeField] private Animator player_animator;
+
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -41,18 +46,14 @@ public class PlayerController : MonoBehaviour
         moveVelocity = moveInput * speed;
 
         // уменьшении энергии
-        if(energy_Current > 0)
+        if(energy_Current > 0 && moveInput.magnitude != 0)
         {
             energy_Current -= Time.deltaTime;
             energy_IndicatorInHUD.fillAmount = energy_Current / energy_Max;
         }
-        else
-        {
-            GameOver();
-        }
-
+        UpdateAnimator(); // обновляет анимацию у перса по его вектору движения
         // эта строка нужна чтобы если есть какая-то логика в "состоянии" то она выполнялась в Update т.к. Player_state не насладует MonoBehaviour
-        if(state_current) state_current.Run();
+        if (state_current) state_current.Run();
         // смена состояния (полицейский / преступник)
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -66,7 +67,22 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    private void UpdateAnimator()
+    {
+        animVec = moveInput;
+        animVec.x = (float)Math.Round(animVec.x, 1);
+        animVec.y = (float)Math.Round(animVec.y, 1);
+        if (Mathf.Abs(animVec.x) >= Mathf.Abs(animVec.y))
+        {
+            animVec.y = 0;
+        }
+        if (Mathf.Abs(animVec.y) >= Mathf.Abs(animVec.x))
+        {
+            animVec.x = 0;
+        }
+        player_animator.SetFloat("x", animVec.x);
+        player_animator.SetFloat("y", animVec.y);
+    }
     private void FixedUpdate()
     {
         rb2d.MovePosition(rb2d.position + moveVelocity * Time.fixedDeltaTime);
