@@ -1209,11 +1209,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!114 &975405035
 MonoBehaviour:
+=======
+  speed: 2.4
+  energy_Max: 20
+  energy_Current: 0
+  energy_IndicatorInHUD: {fileID: 849604819}
+  state_police: {fileID: 11400000, guid: 9ae6c2f4c446a5742a991cdca69e026c, type: 2}
+  state_criminal: {fileID: 11400000, guid: 5a5a241e489f21c4e95de93a840368e3, type: 2}
+  state_current: {fileID: 11400000, guid: 9ae6c2f4c446a5742a991cdca69e026c, type: 2}
+  sprite: {fileID: 1953984164}
+  spriteColorInCriminal: {r: 1, g: 0.60038334, b: 0.13679248, a: 1}
+  spriteColorInPolice: {r: 0, g: 0.3468349, b: 1, a: 1}
+  player_animator: {fileID: 1953984165}
+--- !u!4 &1544725292
+Transform:
+>>>>>>> 5eba5888423a9e33c1c032c5b30e404e3a90cfda
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
