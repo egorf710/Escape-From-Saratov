@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a072dd54048514bb5f8fff18404d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 2.4
   energy_Max: 20
   energy_Current: 0
   energy_IndicatorInHUD: {fileID: 849604819}
