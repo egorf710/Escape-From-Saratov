@@ -31,10 +31,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("OtherComponents")]
     [SerializeField] private Animator player_animator;
+    private PickUpItem pickUpItem;
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        pickUpItem = GetComponent<PickUpItem>();
 
         energy_Current = energy_Max;
     }
@@ -65,6 +67,10 @@ public class PlayerController : MonoBehaviour
             {
                 state_set(state_criminal);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            pickUpItem.PickUp();
         }
     }
     private void UpdateAnimator()
@@ -111,6 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.tag == "soap")
         {
+            return;
             energy_Current = Mathf.Clamp(energy_Current + 5, 0, energy_Max);
             Destroy(collision.gameObject);
         }
