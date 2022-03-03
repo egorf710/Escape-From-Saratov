@@ -1,99 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    public List<Slot> slots = new List<Slot>();
-    public GameObject InventoryUI;
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        slots = FindObjectsOfType<Slot>().ToList();
+        
+    }
 
-        foreach (var slot in slots)
-        {
-            slot.isEmpty = true;
-        }
-    }
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            InventoryUI.SetActive(!InventoryUI.activeSelf);
-        }
-    }
-    public bool AddItem(ItemObject itemObject)
-    {
-        foreach (var slot in slots)
-        {
-            if (slot.isEmpty)
-            {
-                slot.SetSlot(itemObject);
-                Destroy(itemObject.gameObject);
-                return true;
-            }
-            else if (slot.item.stacable)
-            {
-                if(slot.item == itemObject.item)
-                {
-                    slot.amount++;
-                    slot.amountText.text = slot.amount.ToString();
-                    Destroy(itemObject.gameObject);
-                    return true;
-                }
-            }
-        }
-        return false;
-        //true - добавили, false - нету места и прочие проблемы
-    }
-    public bool DropItem(Item item, int amount)
-    {
-        // Выбрасываем предмет
-        foreach (var slot in slots)
-        {
-            if(!slot.isEmpty && slot.item == item)
-            {
-                slot.amount -= amount;
-                // Могу позволить сделать так ибо дроп вызывается редко
-                GameObject go = new GameObject();
-                go.name = item.itemName;
-                go.transform.position = Camera.main.GetComponent<CameraController>()._target.position;
-                go.AddComponent<SpriteRenderer>().sprite = item.sprite;
-                go.AddComponent<ItemObject>().item = item;
-                go.GetComponent<ItemObject>().amount = amount;
-                go.AddComponent<BoxCollider2D>();
-                if (slot.amount <= 0)
-                {
-                    slot.ClearSlot();
-                }
-                return true;
-            }
-        }
-        return false;
-        // false - не получилось дропнуть т.к такого предмета нету и прочие ошибки
-    }
-    public void RemoveItem(Item item)
-    {
-        // Уничтожение предмета
-        foreach (var slot in slots)
-        {
-            if(!slot.isEmpty && slot.item == item)
-            {
-                slot.ClearSlot();
-            }
-        }
-    }
-    public Item FindItem(string name)
-    {
-        // Ищет и возвращает предмет
-        foreach (var slot in slots)
-        {
-            if(!slot.isEmpty && slot.item.itemName == name)
-            {
-                return slot.item;
-            }
-        }
-        return null;
+        
     }
 }
