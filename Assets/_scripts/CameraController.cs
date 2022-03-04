@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    Transform _target;
+    public Transform _target;
     Vector3 _targetInVector3; // нужно чтобы позиция в координатах Z не менялась у камеры
 
     [Header("Скорость с какой камера будет приследость игрока(_target)")]
