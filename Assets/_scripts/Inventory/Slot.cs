@@ -25,6 +25,16 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         iconSlot.color = new Color(1, 1, 1, 1);// <потеряно>
         amountText.text = amount.ToString();
     }
+    public void SetSlot(Item item, int amount)
+    {
+        // <потеряно>
+        this.item = item;
+        this.amount = amount;
+        iconSlot.sprite = item.sprite;
+        isEmpty = false;
+        iconSlot.color = new Color(1, 1, 1, 1);// <потеряно>
+        amountText.text = amount.ToString();
+    }
     public void Drop()
     {
         if (item == null) { return; }
@@ -54,6 +64,7 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     {
         if (item == null) { return; }
         lastMousePosition = eventData.position; // <потеряно>
+        iconSlot.transform.SetParent(transform.parent);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -73,6 +84,23 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         if (item == null) { return; }
+        if (eventData.pointerCurrentRaycast.gameObject && eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>())
+        {
+            Slot curSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>();
+            if(curSlot == this) { return; }
+            if (curSlot.isEmpty)
+            {
+                curSlot.SetSlot(item, amount);
+                ClearSlot();
+            }
+            else
+            {
+                curSlot.amount += amount;
+                curSlot.amountText.text = curSlot.amount.ToString();
+                ClearSlot();
+            }
+        }
+        iconSlot.transform.SetParent(transform);
         iconSlot.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position; // <потеряно>
     }
 

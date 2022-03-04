@@ -11,14 +11,15 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         slots = FindObjectsOfType<Slot>().ToList();
-    }
 
-    void Update()
-    {
         foreach (var slot in slots)
         {
             slot.isEmpty = true;
         }
+    }
+
+    void Update()
+    {
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -29,21 +30,21 @@ public class InventoryManager : MonoBehaviour
     {
         foreach (var slot in slots)
         {
-            if (slot.isEmpty)
+            if (itemObject.item.stacable)
             {
-                slot.SetSlot(itemObject);
-                Destroy(itemObject.gameObject);
-                return true;
-            }
-            else if (slot.item.stacable)
-            {
-                if (slot.item == itemObject.item)
+                if(slot.item == itemObject.item)
                 {
                     slot.amount++;
                     slot.amountText.text = slot.amount.ToString();
                     Destroy(itemObject.gameObject);
                     return true;
                 }
+            }
+            if (slot.isEmpty)
+            {
+                slot.SetSlot(itemObject);
+                Destroy(itemObject.gameObject);
+                return true;
             }
         }
         return false;
