@@ -44,7 +44,7 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         go.transform.position = Camera.main.GetComponent<CameraController>()._target.position;
         go.AddComponent<SpriteRenderer>().sprite = item.sprite;
         go.AddComponent<ItemObject>().item = item;
-        go.GetComponent<ItemObject>().amount = amount;
+        go.GetComponent<ItemObject>().amount = 1;
         go.AddComponent<BoxCollider2D>().isTrigger = true;
 
         amount--;
