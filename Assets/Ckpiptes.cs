@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Ckpiptes : MonoBehaviour
 {
-    //осярни яйпхор охьх ячдю ябнх кчани лернд
+    dynamic Sraka()
+    {
+        return "Jopa";
+    }
 }
