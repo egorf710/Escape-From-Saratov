@@ -8,4 +8,10 @@ public class Ckpiptes : MonoBehaviour
     {
         return "Jopa";
     }
+    //осярни яйпхор охьх ячдю ябнх кчани лернд
+    private string PiskaVJopa()
+    {
+        Debug.Log("darkbox from italy");
+        return "not planed kid";
+    }
 }
