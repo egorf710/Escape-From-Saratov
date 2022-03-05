@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float energy_Current;
     [SerializeField] private Image energy_IndicatorInHUD;
 
+    [Header("life time")]
+    [SerializeField] private float lifeTime_Max = 40;
+    [SerializeField] float lifeTime_Current;
+    [SerializeField] private Image lifeTime_IndicatorInHUD;
+
     [Header("state")]
     [SerializeField] private Player_state state_police;
     [SerializeField] private Player_state state_criminal;
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
         pickUpItem = GetComponent<PickUpItem>();
 
         energy_Current = energy_Max;
+        lifeTime_Current = lifeTime_Max;
     }
 
     private void Update()
@@ -52,6 +58,12 @@ public class PlayerController : MonoBehaviour
         {
             energy_Current -= Time.deltaTime;
             energy_IndicatorInHUD.fillAmount = energy_Current / energy_Max;
+        }
+        // время жизни
+        if(lifeTime_Current > 0)
+        {
+            lifeTime_Current -= Time.deltaTime;
+            lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
         }
         UpdateAnimator(); // обновляет анимацию у перса по его вектору движения
         // эта строка нужна чтобы если есть какая-то логика в "состоянии" то она выполнялась в Update т.к. Player_state не насладует MonoBehaviour
@@ -114,12 +126,17 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(collision.tag == "soap")
-    //    {
-    //        energy_Current = Mathf.Clamp(energy_Current + 5, 0, energy_Max);
-    //        Destroy(collision.gameObject);
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "soap")
+        {
+            lifeTime_Current = Mathf.Clamp(lifeTime_Current + 5, 0, lifeTime_Max);
+            Destroy(collision.gameObject);
+        }
+        if(collision.tag == "energy drink")
+        {
+            energy_Current = Mathf.Clamp(energy_Current + 5, 0, energy_Max);
+            Destroy(collision.gameObject);
+        }
+    }
 }
