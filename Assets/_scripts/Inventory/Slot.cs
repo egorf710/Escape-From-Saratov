@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,21 +7,33 @@ using UnityEngine.UI;
 
 public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler, IPointerClickHandler
 {
-    [Header("<потеряно>")]
+    [Header("Компоненты")]
     public Image iconSlot;
     public Text amountText;
-    [Header("<потеряно>")]
+    [Header("Характеристика")]
     public int amount;
     public Item item;
     private Vector2 lastMousePosition;
-    [Header("<потеряно>")]
+    [Header("Пустой или нет")]
     public bool isEmpty; //true - <потеряно>
+    [HideInInspector] public InventoryManager inventoryManager;
+    [HideInInspector] public Crafts crafts;
     public void SetSlot(ItemObject itemObject)
     {
         // <потеряно>
         item = itemObject.item;
         amount = itemObject.amount;
         iconSlot.sprite = itemObject.item.sprite;
+        isEmpty = false;
+        iconSlot.color = new Color(1, 1, 1, 1);// <потеряно>
+        amountText.text = amount.ToString();
+    }
+    public void SetSlot(Item _item)
+    {
+        // <потеряно>
+        item = _item;
+        amount = 1;
+        iconSlot.sprite = _item.sprite;
         isEmpty = false;
         iconSlot.color = new Color(1, 1, 1, 1);// <потеряно>
         amountText.text = amount.ToString();
@@ -95,9 +108,33 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
             }
             else
             {
-                curSlot.amount += amount;
-                curSlot.amountText.text = curSlot.amount.ToString();
-                ClearSlot();
+                if (curSlot.item == item)
+                {
+                    if (curSlot.item.stacable)
+                    {
+                        curSlot.amount += amount;
+                        curSlot.amountText.text = curSlot.amount.ToString();
+                        ClearSlot();
+                    }
+                }
+                else
+                {
+                    //Crafts
+                    string meItem = item.itemName;//firstItem for craft
+                    string otherITem = curSlot.item.itemName;//lastItem for craft
+                    for (int i = 0; i < item.recipes.Length; i++)
+                    {
+                        if (item.recipes[i].Contains(otherITem))//если мы понимаем что 2 вещи можно совместить
+                        {
+                            crafts.CraftItem(item.recipes[i]);
+                            curSlot.amount--;
+                            amount--;
+                            if(curSlot.amount <= 0) { curSlot.ClearSlot(); }
+                            if(amount <= 0) { ClearSlot(); }
+                            break;
+                        }
+                    }
+                }
             }
         }
         iconSlot.transform.SetParent(transform);
@@ -107,5 +144,10 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void OnPointerClick(PointerEventData eventData)
     {
         if (item == null) { return; }
+        if(item.point == 0) { return; }
+        if (eventData.clickCount >= 2)
+        {
+            inventoryManager.UseItem(this);
+        }
     }
 }

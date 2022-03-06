@@ -2,20 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
     public List<Slot> slots = new List<Slot>();
     public GameObject InventoryUI;
-
+    public PlayerController playerController;
+    public Crafts craftManager;
     void Start()
     {
+        craftManager = GetComponent<Crafts>();
         slots = FindObjectsOfType<Slot>().ToList();
 
         foreach (var slot in slots)
         {
             slot.isEmpty = true;
+            slot.inventoryManager = this;
+            slot.crafts = craftManager;
         }
+        craftManager.Init();
     }
 
     void Update()
@@ -50,7 +56,28 @@ public class InventoryManager : MonoBehaviour
         return false;
         //true - <потеряно>, false - <потеряно>
     }
-
+    public bool AddItem(Item item)
+    {
+        foreach (var slot in slots)
+        {
+            if (item.stacable)
+            {
+                if (slot.item == item)
+                {
+                    slot.amount++;
+                    slot.amountText.text = slot.amount.ToString();
+                    return true;
+                }
+            }
+            if (slot.isEmpty)
+            {
+                slot.SetSlot(item);
+                return true;
+            }
+        }
+        return false;
+        //true - <потеряно>, false - <потеряно>
+    }
     public bool DropItem(Item item, int amount)
     {
         // <потеряно>
@@ -100,5 +127,23 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    internal void UseItem(Slot slot)
+    {
+        if(slot.item.itemName == "energy drink")
+        {
+            playerController.energy_Current += slot.item.point;
+        }
+        else if(slot.item.itemName == "Soap")
+        {
+            playerController.lifeTime_Current += slot.item.point;
+        }
+        slot.amount--;
+        if(slot.amount <= 0)
+        {
+            slot.ClearSlot();
+        }
+        playerController.UpdateIndicatorsUI();
     }
 }

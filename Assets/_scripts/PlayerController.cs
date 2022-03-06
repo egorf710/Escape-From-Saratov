@@ -16,13 +16,15 @@ public class PlayerController : MonoBehaviour
 
     [Header("energy")]
     [SerializeField] private float energy_Max = 20;
-    [SerializeField] float energy_Current;
+    [SerializeField] public float energy_Current;
     [SerializeField] private Image energy_IndicatorInHUD;
+    [SerializeField] private Color energy_Color;
 
     [Header("life time")]
     [SerializeField] private float lifeTime_Max = 40;
-    [SerializeField] float lifeTime_Current;
+    [SerializeField] public float lifeTime_Current;
     [SerializeField] private Image lifeTime_IndicatorInHUD;
+    [SerializeField] private Color lifeTime_Color;
 
     [Header("state")]
     [SerializeField] private Player_state state_police;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator player_animator;
     private PickUpItem pickUpItem;
 
+    bool lowhp;
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -45,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
         energy_Current = energy_Max;
         lifeTime_Current = lifeTime_Max;
+
+        lifeTime_Color = lifeTime_IndicatorInHUD.color;
     }
 
     private void Update()
@@ -64,6 +69,10 @@ public class PlayerController : MonoBehaviour
         {
             lifeTime_Current -= Time.deltaTime;
             lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
+            if(lifeTime_Current < 10 && !lowhp)
+            {
+                StartCoroutine(WrongHealth());
+            }
         }
         UpdateAnimator(); // обновляет анимацию у перса по его вектору движения
         // эта строка нужна чтобы если есть какая-то логика в "состоянии" то она выполнялась в Update т.к. Player_state не насладует MonoBehaviour
@@ -128,6 +137,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        return;
         if(collision.tag == "soap")
         {
             lifeTime_Current = Mathf.Clamp(lifeTime_Current + 5, 0, lifeTime_Max);
@@ -137,6 +147,28 @@ public class PlayerController : MonoBehaviour
         {
             energy_Current = Mathf.Clamp(energy_Current + 5, 0, energy_Max);
             Destroy(collision.gameObject);
+        }
+    }
+    public void UpdateIndicatorsUI()
+    {
+        lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
+        energy_IndicatorInHUD.fillAmount = energy_Current / energy_Max;
+    }
+    IEnumerator WrongHealth()
+    {
+        lowhp = true;
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            lifeTime_IndicatorInHUD.color = Color.red;
+            yield return new WaitForSeconds(0.5f);
+            lifeTime_IndicatorInHUD.color = lifeTime_Color;
+            if(lifeTime_Current >= 10)
+            {
+                lowhp = false;
+                StopCoroutine(WrongHealth());
+                break;
+            }
         }
     }
 }
