@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1544725291}
+  inventoryManager: {fileID: 376045045}
 --- !u!1 &427651062
 GameObject:
   m_ObjectHideFlags: 0

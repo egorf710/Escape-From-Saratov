@@ -17,4 +17,4 @@ MonoBehaviour:
   point: 5
   stacable: 1
   recipes:
-  - Soap+Rope=event_damage:20
+  - Rope+Soap=event_damage:20
