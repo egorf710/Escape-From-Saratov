@@ -11,7 +11,7 @@ public class Interact : MonoBehaviour
         {
             if(curPB != null) { return; }
             curPB = other.transform.GetComponent<PoliceBrain>();
-            curPB.dialogText.text = "E - говорить\nQ - завершить";
+            curPB.dialogText.text = "E - хвалить\nR - дразнить\nQ - завершить";
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -19,22 +19,33 @@ public class Interact : MonoBehaviour
         if (other.transform.tag == "policeman")
         {
             if (curPB != other.transform.GetComponent<PoliceBrain>()) { return; }
-            other.transform.GetComponent<PoliceBrain>().dialogText.text = "";
+            curPB.dialogText.text = "";
+            curPB.EndDialog();
+            curPB = null;
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private void Update()
     {
-        if(other.transform.tag == "policeman")
+        if(curPB == null) { return; }
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!curPB.inDialog)
             {
-                other.GetComponent<PoliceBrain>().StartDialog();
+                curPB.StartDialog();
             }
-            if (Input.GetKeyDown(KeyCode.Q))
+            else
             {
-                other.GetComponent<PoliceBrain>().EndDialog();
+                curPB.Pohvala();
             }
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            curPB.Draznit();
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            curPB.EndDialog();
+        }
     }
-
 }
