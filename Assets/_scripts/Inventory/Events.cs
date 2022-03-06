@@ -20,7 +20,7 @@ public class Events : MonoBehaviour
     [Header("Components")]
     public static Events eventsMager; // это нужно что бы работала ’≈–Ќя ¬џЎ≈
     public dynamic localPoint; //сюда временно записываетс€ урон, лечение, состо€ние и т.д то что используетс€ во врем€ ивента
-    private void Start()
+    private void Awake()
     {
         eventsMager = this;
         //’≈–Ќя ¬џЎ≈:
