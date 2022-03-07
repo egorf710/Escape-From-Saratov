@@ -14,6 +14,7 @@ public class FightSystem : MonoBehaviour
     public FightItem youFrazi, enemyFrazi;
 
     public bool fight;
+    public bool ready;
     [Header("Log")]
     public Text logText;
     [Header("Other components")]
@@ -32,6 +33,7 @@ public class FightSystem : MonoBehaviour
     public ItemObject prefabDropItem;
     public void InitFight()
     {
+        ready = true;
         fight = true;
         transform.GetChild(0).gameObject.SetActive(true);
         CameraMain.SetActive(false);
@@ -66,6 +68,7 @@ public class FightSystem : MonoBehaviour
     }
     public void enemyAttck()
     {
+        ready = false;
         int bullingFraza = Random.Range(0, 100);
         if (bullingFraza >= 0 && bullingFraza < 50)
         {
@@ -94,9 +97,11 @@ public class FightSystem : MonoBehaviour
         {
             youAnim.SetTrigger("die");
         }
+        ready = true;
     }
     public void youAttack(Item frazaItem)
     {
+        if (!ready) { return; }
         you_mana -= frazaItem.point;
         if(frazaItem.bulling == 1)
         {
@@ -155,7 +160,7 @@ public class FightSystem : MonoBehaviour
     }
     IEnumerator HideDialog(bool enemy)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
         if (!enemy)
         {
             youDialog.transform.parent.gameObject.SetActive(false);

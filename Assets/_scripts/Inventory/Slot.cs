@@ -97,42 +97,63 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         if (item == null) { return; }
-        if (eventData.pointerCurrentRaycast.gameObject && eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>())
+        if (eventData.pointerCurrentRaycast.gameObject)
         {
-            Slot curSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>();
-            if(curSlot == this) { return; }
-            if (curSlot.isEmpty)
+            if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>())
             {
-                curSlot.SetSlot(item, amount);
-                ClearSlot();
-            }
-            else
-            {
-                if (curSlot.item == item)
+                Slot curSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>();
+                if (curSlot == this) { return; }
+                if (curSlot.isEmpty)
                 {
-                    if (curSlot.item.stacable)
-                    {
-                        curSlot.amount += amount;
-                        curSlot.amountText.text = curSlot.amount.ToString();
-                        ClearSlot();
-                    }
+                    curSlot.SetSlot(item, amount);
+                    ClearSlot();
                 }
                 else
                 {
-                    //Crafts
-                    string meItem = item.itemName;//firstItem for craft
-                    string otherITem = curSlot.item.itemName;//lastItem for craft
-                    for (int i = 0; i < item.recipes.Length; i++)
+                    if (curSlot.item == item)
                     {
-                        if (item.recipes[i].Contains(otherITem))//если мы понимаем что 2 вещи можно совместить
+                        if (curSlot.item.stacable)
                         {
-                            crafts.CraftItem(item.recipes[i]);
-                            curSlot.amount--;
-                            amount--;
-                            if(curSlot.amount <= 0) { curSlot.ClearSlot(); }
-                            if(amount <= 0) { ClearSlot(); }
-                            break;
+                            curSlot.amount += amount;
+                            curSlot.amountText.text = curSlot.amount.ToString();
+                            ClearSlot();
                         }
+                    }
+                    else
+                    {
+                        //Crafts
+                        string meItem = item.itemName;//firstItem for craft
+                        string otherITem = curSlot.item.itemName;//lastItem for craft
+                        for (int i = 0; i < item.recipes.Length; i++)
+                        {
+                            if (item.recipes[i].Contains(otherITem))//если мы понимаем что 2 вещи можно совместить
+                            {
+                                crafts.CraftItem(item.recipes[i]);
+                                curSlot.amount--;
+                                amount--;
+                                if (curSlot.amount <= 0) { curSlot.ClearSlot(); }
+                                if (amount <= 0) { ClearSlot(); }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //attach-area
+                if(eventData.pointerCurrentRaycast.gameObject.name == "attach-area" && item.bulling > 0)
+                {
+                    if (FindObjectOfType<FightSystem>().ready)
+                    {
+                        FindObjectOfType<FightSystem>().youAttack(item);
+                        amount--;
+                        amountText.text = amount.ToString();
+                        if (amount <= 0)
+                        {
+                            ClearSlot();
+                        }
+                        FindObjectOfType<FightSystem>().ready = false;
                     }
                 }
             }
@@ -144,7 +165,7 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void OnPointerClick(PointerEventData eventData)
     {
         if (item == null) { return; }
-        if(item.point == 0) { return; }
+        if(item.point == 0 || item.bulling > 0) { return; }
         if (eventData.clickCount >= 2)
         {
             inventoryManager.UseItem(this);

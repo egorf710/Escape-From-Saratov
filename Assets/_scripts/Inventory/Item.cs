@@ -21,6 +21,6 @@ public class Item : ScriptableObject
     //[Header("Soap+Rope=event:death (deat это название метода в скрипте Events, который выполнитс€ через 1f)")]
     public string[] recipes;
     [Header("Ќасколько буллинговый")]
-    [Range(1,3)]
-    public int bulling;
+    [Range(0,3)]
+    public int bulling = 0;
 }
