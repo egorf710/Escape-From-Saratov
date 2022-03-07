@@ -79,6 +79,17 @@ public class InventoryManager : MonoBehaviour
         return false;
         //true - <потеряно>, false - <потеряно>
     }
+    public bool FindEmpySlot()
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.isEmpty)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public bool DropItem(Item item, int amount)
     {
         // <потеряно>

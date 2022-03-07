@@ -11,7 +11,7 @@ public class Interact : MonoBehaviour
         {
             if(curPB != null) { return; }
             curPB = other.transform.GetComponent<PoliceBrain>();
-            curPB.dialogText.text = "E - хвалить\nR - дразнить\nQ - завершить";
+            curPB.dialogText.text = "E - Ќј„ј“№/хвалить\nR - дразнить\nQ - завершить";
             curPB.dialogUI.SetActive(true);
         }
     }

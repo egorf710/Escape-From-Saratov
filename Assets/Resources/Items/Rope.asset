@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Rope
   sprite: {fileID: 21300000, guid: 9adfcc76fbbc87d42ab080e357832897, type: 3}
   point: 0
-  stacable: 0
+  stacable: 1
   recipes:
   - Rope+Soap=event_damage:20
   bulling: 0

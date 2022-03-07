@@ -133,6 +133,8 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
                                 amount--;
                                 if (curSlot.amount <= 0) { curSlot.ClearSlot(); }
                                 if (amount <= 0) { ClearSlot(); }
+                                amountText.text = amount.ToString();
+                                curSlot.amountText.text = curSlot.amount.ToString();
                                 break;
                             }
                         }

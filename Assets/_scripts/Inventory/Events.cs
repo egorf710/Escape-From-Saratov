@@ -54,7 +54,20 @@ public class Events : MonoBehaviour
     {
         //в этом случае localPoint это название предмета который получится после крафта
         Item resultItem = (Item)Resources.Load("Items/" + localPoint);
-        inventoryManager.AddItem(resultItem);
+        if (!inventoryManager.FindEmpySlot())
+        {
+            GameObject go = new GameObject();
+            go.name = resultItem.itemName;
+            go.transform.position = Camera.main.GetComponent<CameraController>()._target.position;
+            go.AddComponent<SpriteRenderer>().sprite = resultItem.sprite;
+            go.AddComponent<ItemObject>().item = resultItem;
+            go.GetComponent<ItemObject>().amount = 1;
+            go.AddComponent<BoxCollider2D>();
+        }
+        else
+        {
+            inventoryManager.AddItem(resultItem);
+        }
     }
 
     //EVENT3
