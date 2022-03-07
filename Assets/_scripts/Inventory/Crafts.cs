@@ -8,7 +8,7 @@ public class Crafts : MonoBehaviour
     public void Init()
     {
         //test
-        CraftItem("Soap+Rope=event_damage:20");
+        //CraftItem("Soap+Rope=event_damage:20");
     }
     public dynamic CraftItem(string recipe) //система item+item, 
     {

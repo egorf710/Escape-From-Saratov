@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dde84c3a12d66214eaf8e8a3d25478d6, type: 3}
-  m_Name: bullingPaper1
+  m_Name: bullingPaper2
   m_EditorClassIdentifier: 
-  itemName: bullingPaper1
-  sprite: {fileID: 6738218706411903907, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  itemName: bullingPaper2
+  sprite: {fileID: 6395214293025444372, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   point: 15
   stacable: 0
-  recipes: []
-  bulling: 1
+  recipes:
+  - bullingPaper1+bullingPaper1=event_addItem:bullingPaper2
+  bulling: 2
