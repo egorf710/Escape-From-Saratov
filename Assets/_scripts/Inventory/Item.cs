@@ -7,6 +7,8 @@ public class Item : ScriptableObject
 {
     [Header("название")]
     public string itemName;
+    [Header("Описание")]
+    public string description = "Предмет";
     [Header("спрайт")]
     public Sprite sprite;
     [Header("сколько добавляет при использовании, енергия, мыло, манаи т.д")]

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: policeForm
   m_EditorClassIdentifier: 
   itemName: policeForm
+  description: "\u041F\u043E\u043B\u0438\u0446\u0435\u0439\u0441\u043A\u0430\u044F
+    \u0444\u043E\u0440\u043C\u0430"
   sprite: {fileID: -68751727340038015, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   point: 0
   stacable: 0

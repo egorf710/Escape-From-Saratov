@@ -64,6 +64,11 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         amountText.text = amount.ToString();
         if (amount <= 0) { ClearSlot(); }
     }
+    public void Info()
+    {
+        if(item == null) { return; }
+        Log.toLog(item.description);
+    }
     public void ClearSlot()
     {
         // <потеряно>
