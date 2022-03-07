@@ -9,7 +9,7 @@ public class Item : ScriptableObject
     public string itemName;
     [Header("спрайт")]
     public Sprite sprite;
-    [Header("сколько добавляет при использовании, енергия, мыло и т.д")]
+    [Header("сколько добавляет при использовании, енергия, мыло, манаи т.д")]
     public int point;
     [Header("стакается или нет")]
     public bool stacable;
@@ -20,4 +20,7 @@ public class Item : ScriptableObject
     //[Header("Soap+Rope=addItem:enegry drink")]
     //[Header("Soap+Rope=event:death (deat это название метода в скрипте Events, который выполнится через 1f)")]
     public string[] recipes;
+    [Header("Насколько буллинговый")]
+    [Range(1,3)]
+    public int bulling;
 }

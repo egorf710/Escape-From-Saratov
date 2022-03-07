@@ -12,6 +12,7 @@ public class Interact : MonoBehaviour
             if(curPB != null) { return; }
             curPB = other.transform.GetComponent<PoliceBrain>();
             curPB.dialogText.text = "E - хвалить\nR - дразнить\nQ - завершить";
+            curPB.dialogUI.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D other)

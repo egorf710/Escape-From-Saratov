@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryUI;
     public PlayerController playerController;
     public Crafts craftManager;
+    public FightSystem fightSystem;
     void Start()
     {
         craftManager = GetComponent<Crafts>();

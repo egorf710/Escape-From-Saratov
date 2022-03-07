@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     [Header("OtherComponents")]
     [SerializeField] private Animator player_animator;
     private PickUpItem pickUpItem;
+    public FightSystem fightSystem;
 
     bool lowhp;
     private void Start()
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (fightSystem.fight) { return; }//что бы во время боя не ходил
         // передвижение
         moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
         moveVelocity = moveInput * speed;
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // В случае проигрыша всю логику писать тута!!
-    private void GameOver()
+    public void GameOver()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
