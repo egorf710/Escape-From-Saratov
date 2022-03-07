@@ -17,5 +17,5 @@ MonoBehaviour:
   point: 15
   stacable: 0
   recipes:
-  - bullingPaper1+bullingPaper1=event_addItem:bullingPaper2
+  - bullingPaper2+bullingPaper2=addItem:bullingPaper3
   bulling: 2

@@ -110,14 +110,11 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
                 }
                 else
                 {
-                    if (curSlot.item == item)
+                    if (curSlot.item == item && curSlot.item.stacable)
                     {
-                        if (curSlot.item.stacable)
-                        {
-                            curSlot.amount += amount;
-                            curSlot.amountText.text = curSlot.amount.ToString();
-                            ClearSlot();
-                        }
+                        curSlot.amount += amount;
+                        curSlot.amountText.text = curSlot.amount.ToString();
+                        ClearSlot();
                     }
                     else
                     {
