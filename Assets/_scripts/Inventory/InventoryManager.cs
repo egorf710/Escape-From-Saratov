@@ -102,7 +102,7 @@ public class InventoryManager : MonoBehaviour
             go.transform.position = Camera.main.GetComponent<CameraController>()._target.position;
             go.AddComponent<SpriteRenderer>().sprite = item.sprite;
             go.AddComponent<ItemObject>().item = item;
-            go.GetComponent<ItemObject>().amount = amount;
+            go.GetComponent<ItemObject>().amount = 1;
             go.AddComponent<BoxCollider2D>();
         }
     }
