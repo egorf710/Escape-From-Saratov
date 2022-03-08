@@ -35,7 +35,9 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer sprite;
     public Color spriteColorInCriminal;
     public Color spriteColorInPolice;
-
+    [Header("player health sprite")]
+    public Sprite[] emoji_sprites;
+    public Image emoji_image;
     [Header("OtherComponents")]
     [SerializeField] private Animator player_animator;
     private PickUpItem pickUpItem;
@@ -71,9 +73,25 @@ public class PlayerController : MonoBehaviour
         {
             lifeTime_Current -= Time.deltaTime;
             lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
-            if(lifeTime_Current < 10 && !lowhp)
+            if(lifeTime_Current > 32)
             {
-                StartCoroutine(WrongHealth());
+                emoji_image.sprite = emoji_sprites[0];
+            }
+            else if(lifeTime_Current > 24)
+            {
+                emoji_image.sprite = emoji_sprites[1];
+            }
+            else if(lifeTime_Current > 16)
+            {
+                emoji_image.sprite = emoji_sprites[2];
+            }
+            else if(lifeTime_Current > 8)
+            {
+                emoji_image.sprite = emoji_sprites[3];
+            }
+            else
+            {
+                emoji_image.sprite = emoji_sprites[4];
             }
         }
         UpdateAnimator(); // обновляет анимацию у перса по его вектору движения
@@ -155,22 +173,5 @@ public class PlayerController : MonoBehaviour
     {
         lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
         energy_IndicatorInHUD.fillAmount = energy_Current / energy_Max;
-    }
-    IEnumerator WrongHealth()
-    {
-        lowhp = true;
-        while (true)
-        {
-            yield return new WaitForSeconds(0.5f);
-            lifeTime_IndicatorInHUD.color = Color.red;
-            yield return new WaitForSeconds(0.5f);
-            lifeTime_IndicatorInHUD.color = lifeTime_Color;
-            if(lifeTime_Current >= 10)
-            {
-                lowhp = false;
-                StopCoroutine(WrongHealth());
-                break;
-            }
-        }
     }
 }
