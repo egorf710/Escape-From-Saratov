@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82cec98d78a43f44f9d7492628e6ec88, type: 3}
-  m_Name: board
+  m_Name: lozka
   m_EditorClassIdentifier: 
-  _name: "\u0414\u043E\u0441\u043A\u0438"
-  _sprite: {fileID: 980155311395259703, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
-  _description: 
+  _name: "\u041B\u043E\u0436\u043A\u0430"
+  _sprite: {fileID: 8132948862792318974, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  _description: "\u041D\u0430\u0439\u0442\u0438 \u043C\u043E\u0436\u043D\u043E \u0432
+    \u0441\u0442\u043E\u043B\u043E\u0432\u043E\u0439"
   isCrafting: 0
   itemsForCraft: []

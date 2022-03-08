@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82cec98d78a43f44f9d7492628e6ec88, type: 3}
-  m_Name: board
+  m_Name: hammer
   m_EditorClassIdentifier: 
-  _name: "\u0414\u043E\u0441\u043A\u0438"
-  _sprite: {fileID: 980155311395259703, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  _name: "\u041C\u043E\u043B\u043E\u0442\u043E\u043A"
+  _sprite: {fileID: -956252262595852801, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   _description: 
   isCrafting: 0
   itemsForCraft: []
