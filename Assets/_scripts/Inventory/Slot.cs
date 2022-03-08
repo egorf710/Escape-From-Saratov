@@ -18,6 +18,10 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public bool isEmpty; //true - <потеряно>
     [HideInInspector] public InventoryManager inventoryManager;
     [HideInInspector] public Crafts crafts;
+
+    [Header("Вики")] 
+    [SerializeField] InformationPanel InfoPanel;
+
     public void SetSlot(ItemObject itemObject)
     {
         // <потеряно>
@@ -67,7 +71,7 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void Info()
     {
         if(item == null) { return; }
-        Log.toLog(item.description);
+        InfoPanel.OpenItemInInfoPanel(this.item.sprite);
     }
     public void ClearSlot()
     {

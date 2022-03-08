@@ -10,8 +10,8 @@ public class PoliceBrain : MonoBehaviour
     public bool inDialog;
     public int angry;
     public GameObject dialogUI;
-    public Image dialogImage;
-    public Color[] dialogColors;
+    public Image smileInDialog;
+    public Sprite[] smiles;
     public FightSystem fightSystem;
     public FightItem fightItem;
     public bool kop_or_zek;
@@ -23,6 +23,8 @@ public class PoliceBrain : MonoBehaviour
     {
         fightSystem = FindObjectOfType<FightSystem>();
         StartCoroutine(randmFraza());
+
+        smileInDialog.sprite = smiles[0];
     }
     public void StartDialog()
     {
@@ -55,6 +57,7 @@ public class PoliceBrain : MonoBehaviour
     {
         if(angry <= 0)
         {
+            smileInDialog.sprite = smiles[0];
             if (questInPrgcess)
             {
                 if (questSystem.ChekQuest(qyestItem[questProgress]))
@@ -80,12 +83,12 @@ public class PoliceBrain : MonoBehaviour
         }
         else if (angry > 0 && angry < 10)
         {
-            dialogImage.color = dialogColors[0];
+            smileInDialog.sprite = smiles[1];
             dialogText.text = dialogItem.normFrazi[Random.Range(0, dialogItem.normFrazi.Length)];
         }
         else if(angry >= 10 && angry <= 30)
         {
-            dialogImage.color = dialogColors[1];
+            smileInDialog.sprite = smiles[2];
             dialogText.text = dialogItem.bullingFrazi1[Random.Range(0, dialogItem.bullingFrazi1.Length)];
         }
         else if (angry >= 30 && angry <= 50)
@@ -98,12 +101,12 @@ public class PoliceBrain : MonoBehaviour
             {
                 GameLog.AddAction("angry zek");
             }
-            dialogImage.color = dialogColors[2];
+            smileInDialog.sprite = smiles[3];
             dialogText.text = dialogItem.bullingFrazi2[Random.Range(0, dialogItem.bullingFrazi2.Length)];
         }
         else if(angry >= 50)
         {
-            dialogImage.color = dialogColors[3];
+            smileInDialog.sprite = smiles[4];
             dialogText.text = dialogItem.bullingFrazi3[Random.Range(0, dialogItem.bullingFrazi3.Length)];
         }
     }

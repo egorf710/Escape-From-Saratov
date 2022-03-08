@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "new DialogItem", menuName = "Dialog/DialogItem")]
+[CreateAssetMenu(fileName = "new DialogItem", menuName = "Game/Dialog/DialogItem")]
 public class DialogItem : ScriptableObject
 {
     public string[] startFrazi;
