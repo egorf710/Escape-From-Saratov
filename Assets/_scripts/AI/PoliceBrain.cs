@@ -13,6 +13,12 @@ public class PoliceBrain : MonoBehaviour
     public Image dialogImage;
     public Color[] dialogColors;
     public FightSystem fightSystem;
+    public FightItem fightItem;
+    public bool kop_or_zek;
+    [Header("Êâåñò")]
+    public int questProgress;
+    public qyestItem[] qyestItem;
+    public bool questInPrgcess;
     private void Start()
     {
         fightSystem = FindObjectOfType<FightSystem>();
@@ -26,7 +32,7 @@ public class PoliceBrain : MonoBehaviour
     }
     public void Pohvala()
     {
-        if (angry >= 10)
+        if (angry >= 0)
         {
             angry -= 5;
         }
@@ -41,13 +47,38 @@ public class PoliceBrain : MonoBehaviour
         else
         {
             EndDialog();
-            fightSystem.InitFight();
+            fightSystem.InitFight(fightItem, kop_or_zek);
         }
         UpdateText();
     }
     void UpdateText()
     {
-        if(angry < 10)
+        if(angry <= 0)
+        {
+            if (questInPrgcess)
+            {
+                if (questSystem.ChekQuest(qyestItem[questProgress]))
+                {
+                    FindObjectOfType<InventoryManager>().SpawnItem(qyestItem[questProgress].prise, qyestItem[questProgress].amount);
+                    questProgress++;
+                    questInPrgcess = false;
+                }
+            }
+            if (questProgress < qyestItem.Length)
+            {
+                Log.toLog(" -ÇÀÄÀÍÈÅ- \n" + qyestItem[questProgress].descriptional + "\n ÒÛ ÏÎËÓ×ÈØÜ: " + qyestItem[questProgress].prise.itemName + "\n Ó ÒÅÁß: 10 ìèíóò");
+                questInPrgcess = true;
+            }
+            if (kop_or_zek)
+            {
+                GameLog.AddAction("speak kop");
+            }
+            else
+            {
+                GameLog.AddAction("speak zek");
+            }
+        }
+        else if (angry > 0 && angry < 10)
         {
             dialogImage.color = dialogColors[0];
             dialogText.text = dialogItem.normFrazi[Random.Range(0, dialogItem.normFrazi.Length)];
@@ -59,6 +90,14 @@ public class PoliceBrain : MonoBehaviour
         }
         else if (angry >= 30 && angry <= 50)
         {
+            if (kop_or_zek)
+            {
+                GameLog.AddAction("angry kop");
+            }
+            else
+            {
+                GameLog.AddAction("angry zek");
+            }
             dialogImage.color = dialogColors[2];
             dialogText.text = dialogItem.bullingFrazi2[Random.Range(0, dialogItem.bullingFrazi2.Length)];
         }

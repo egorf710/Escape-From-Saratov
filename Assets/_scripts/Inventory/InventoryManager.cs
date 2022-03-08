@@ -27,7 +27,6 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             InventoryUI.SetActive(!InventoryUI.activeSelf);
@@ -41,6 +40,7 @@ public class InventoryManager : MonoBehaviour
             {
                 if(slot.item == itemObject.item)
                 {
+                    GameLog.AddAction("addItem " + slot.item.itemName);
                     slot.amount++;
                     slot.amountText.text = slot.amount.ToString();
                     Destroy(itemObject.gameObject);
@@ -49,6 +49,7 @@ public class InventoryManager : MonoBehaviour
             }
             if (slot.isEmpty)
             {
+                GameLog.AddAction("addItem " + itemObject.item.itemName);
                 slot.SetSlot(itemObject);
                 Destroy(itemObject.gameObject);
                 return true;
@@ -65,6 +66,7 @@ public class InventoryManager : MonoBehaviour
             {
                 if (slot.item == item)
                 {
+                    GameLog.AddAction("addItem " + slot.item.itemName);
                     slot.amount++;
                     slot.amountText.text = slot.amount.ToString();
                     return true;
@@ -72,6 +74,7 @@ public class InventoryManager : MonoBehaviour
             }
             if (slot.isEmpty)
             {
+                GameLog.AddAction("addItem " + item.itemName);
                 slot.SetSlot(item);
                 return true;
             }
@@ -90,6 +93,19 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
+    public void SpawnItem(Item item, int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject go = new GameObject();
+            go.name = item.itemName;
+            go.transform.position = Camera.main.GetComponent<CameraController>()._target.position;
+            go.AddComponent<SpriteRenderer>().sprite = item.sprite;
+            go.AddComponent<ItemObject>().item = item;
+            go.GetComponent<ItemObject>().amount = amount;
+            go.AddComponent<BoxCollider2D>();
+        }
+    }
     public bool DropItem(Item item, int amount)
     {
         // <потеряно>
@@ -106,6 +122,7 @@ public class InventoryManager : MonoBehaviour
                 go.AddComponent<ItemObject>().item = item;
                 go.GetComponent<ItemObject>().amount = amount;
                 go.AddComponent<BoxCollider2D>();
+                GameLog.AddAction("dropItem " + slot.item.itemName);
                 if (slot.amount <= 0)
                 {
                     slot.ClearSlot();
@@ -127,7 +144,22 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
-    public Item FindItem(string name)
+    public void RemoveItem(string itemName, int amount)
+    {
+        // <потеряно>
+        foreach (var slot in slots)
+        {
+            if (!slot.isEmpty && slot.item.itemName == itemName)
+            {
+                slot.amount -= amount;
+                if(slot.amount <= 0)
+                {
+                    slot.ClearSlot();
+                }
+            }
+        }
+    }
+    public int FindItem(string name)
     {
 
         // <потеряно>
@@ -135,10 +167,10 @@ public class InventoryManager : MonoBehaviour
         {
             if (!slot.isEmpty && slot.item.itemName == name)
             {
-                return slot.item;
+                return slot.amount;
             }
         }
-        return null;
+        return 0;
     }
 
     internal void UseItem(Slot slot)
@@ -151,6 +183,7 @@ public class InventoryManager : MonoBehaviour
         {
             playerController.lifeTime_Current += slot.item.point;
         }
+        GameLog.AddAction("useItem " + slot.item.itemName);
         slot.amount--;
         if(slot.amount <= 0)
         {

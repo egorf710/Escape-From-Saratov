@@ -11,8 +11,8 @@ public class FightSystem : MonoBehaviour
     public int enemy_health = 100; // всего 100 хп
     //фраза потребляет ману что бы небыло такого что гг без урона ушёл
 
-    public FightItem youFrazi, enemyFrazi;
-
+    public FightItem youFrazi, youFraziKop, youFraziZek, enemyFrazi;
+    bool kop_or_zek;
     public bool fight;
     public bool ready;
     [Header("Log")]
@@ -29,10 +29,27 @@ public class FightSystem : MonoBehaviour
     public Image youHealthUI;
     public Image youManaUI;
     public Image enemyHealthUI;
+    public SpriteRenderer enemySprite;
+    public Sprite zekIdle;
+    public Sprite kopIdle;
     [Header("DropItem")]
     public ItemObject prefabDropItem;
-    public void InitFight()
+    public void InitFight(FightItem fightItem, bool b)
     {
+        kop_or_zek = b;
+        if (kop_or_zek)
+        {
+            GameLog.AddAction("fight kop");
+            enemySprite.sprite = kopIdle;
+            youFrazi = youFraziKop;
+        }
+        else
+        {
+            GameLog.AddAction("fight zek");
+            enemySprite.sprite = zekIdle;
+            youFrazi = youFraziZek;
+        }
+        enemyFrazi = fightItem;
         ready = true;
         fight = true;
         transform.GetChild(0).gameObject.SetActive(true);
@@ -131,6 +148,14 @@ public class FightSystem : MonoBehaviour
         else
         {
             Invoke("enemyAttck", 1f);
+        }
+        if (kop_or_zek)
+        {
+            GameLog.AddAction("punch kop");
+        }
+        else
+        {
+            GameLog.AddAction("punch zek");
         }
     }
     public void Log(string msg)

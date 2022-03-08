@@ -59,7 +59,7 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         go.AddComponent<ItemObject>().item = item;
         go.GetComponent<ItemObject>().amount = 1;
         go.AddComponent<BoxCollider2D>().isTrigger = true;
-
+        GameLog.AddAction("dropItem " + item.itemName);
         amount--;
         amountText.text = amount.ToString();
         if (amount <= 0) { ClearSlot(); }
@@ -131,6 +131,7 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
                             if (item.recipes[i].Contains(otherITem))//если мы понимаем что 2 вещи можно совместить
                             {
                                 crafts.CraftItem(item.recipes[i]);
+                                GameLog.AddAction("creaftItem " + item.itemName);
                                 curSlot.amount--;
                                 amount--;
                                 if (curSlot.amount <= 0) { curSlot.ClearSlot(); }
