@@ -29,12 +29,13 @@ public class PlayerController : MonoBehaviour
     [Header("state")]
     [SerializeField] private Player_state state_police;
     [SerializeField] private Player_state state_criminal;
+    [SerializeField] private Player_state state_me;
     [SerializeField] private Player_state state_current;
 
     [Header("player sprite")]
     public SpriteRenderer sprite;
-    public Color spriteColorInCriminal;
-    public Color spriteColorInPolice;
+    //public Color spriteColorInCriminal;
+    //public Color spriteColorInPolice;
     [Header("player health sprite")]
     public Sprite[] emoji_sprites;
     public Image emoji_image;
@@ -101,14 +102,22 @@ public class PlayerController : MonoBehaviour
         // смена состояния (полицейский / преступник)
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(state_current.state_name == "criminal")
+            if(state_current.state_name == "criminal" && FindObjectOfType<InventoryManager>().FindItem("policeForm") > 0)
             {
+                player_animator.runtimeAnimatorController = FindObjectOfType<GameComponents>().anim_policeForm;
+                FindObjectOfType<InventoryManager>().RemoveItem("policeForm", 1);
                 state_set(state_police);
+                return;
             }
-            else
+            if(state_current.state_name == "police" && FindObjectOfType<InventoryManager>().FindItem("zekForm") > 0)
             {
+                player_animator.runtimeAnimatorController = FindObjectOfType<GameComponents>().anim_zekForm;
+                FindObjectOfType<InventoryManager>().RemoveItem("zekForm", 1);
                 state_set(state_criminal);
+                return;
             }
+            player_animator.runtimeAnimatorController = FindObjectOfType<GameComponents>().anim_meForm;
+            state_set(state_me);
         }
         // инвентарь
         if (Input.GetKeyDown(KeyCode.E))

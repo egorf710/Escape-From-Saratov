@@ -6,7 +6,6 @@ public class PlayerState_criminal : Player_state
     public override void Init()
     {
         state_name = "criminal";
-        _player.sprite.color = _player.spriteColorInCriminal;
     }
 
     public override void Run()

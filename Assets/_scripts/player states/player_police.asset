@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: player_police
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+  state_name: police

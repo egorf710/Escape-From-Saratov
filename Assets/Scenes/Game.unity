@@ -695,6 +695,54 @@ MonoBehaviour:
   inventoryManager: {fileID: 0}
   crafts: {fileID: 0}
   InfoPanel: {fileID: 60882983}
+--- !u!1 &47314178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47314180}
+  - component: {fileID: 47314179}
+  m_Layer: 0
+  m_Name: -GameComponents-
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &47314179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47314178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9667ff029be12f478aaa92ef09631d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 1544725291}
+  cameraController: {fileID: 519420030}
+  anim_policeForm: {fileID: 9100000, guid: f150df29e807f674aa4da83ee577275d, type: 2}
+  anim_zekForm: {fileID: 9100000, guid: 09a638c403ca278458a6b7d6a156cc41, type: 2}
+  anim_meForm: {fileID: 9100000, guid: 25bccda10b72bec4f8bbf96d99d587c7, type: 2}
+--- !u!4 &47314180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47314178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.9999971, y: -0.36934853, z: -3.9599264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &53302012
 GameObject:
   m_ObjectHideFlags: 0
@@ -11356,6 +11404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4465789387391509948, guid: f6fe9bbbcda99174bb9b3f0c9b41626a, type: 3}
+      propertyPath: state_me
+      value: 
+      objectReference: {fileID: 11400000, guid: f9358c464965c404f8341b30be6276ff, type: 2}
     - target: {fileID: 4465789387391509948, guid: f6fe9bbbcda99174bb9b3f0c9b41626a, type: 3}
       propertyPath: emoji_image
       value: 
