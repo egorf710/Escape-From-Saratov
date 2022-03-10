@@ -32,6 +32,9 @@ public class FightSystem : MonoBehaviour
     public SpriteRenderer enemySprite;
     public Sprite zekIdle;
     public Sprite kopIdle;
+    public Image statYOU;
+    public Image stasENEMY;
+    public Sprite[] emoji;
     [Header("DropItem")]
     public ItemObject prefabDropItem;
     public void InitFight(FightItem fightItem, bool b)
@@ -59,6 +62,8 @@ public class FightSystem : MonoBehaviour
         you_health = 100;
         you_mana = 100;
         enemy_health = 100;
+        statYOU.sprite = emoji[0];
+        stasENEMY.sprite = emoji[0];
     }
     public void EndDialog()
     {
@@ -93,6 +98,7 @@ public class FightSystem : MonoBehaviour
             SetFraza(enemyFrazi.bulling1[Random.Range(0, enemyFrazi.bulling1.Length)], true);
             Log("Противник что то бормочит...");
             Log("Вы едва уловили суть буллинга, вас это не сильно задело");
+            statYOU.sprite = emoji[0];
         }
         else if (bullingFraza >= 50 && bullingFraza < 75)
         {
@@ -100,6 +106,7 @@ public class FightSystem : MonoBehaviour
             you_health -= 39;
             Log("Противник готоворит о вас...");
             Log("Вам стало обидно");
+            statYOU.sprite = emoji[1];
         }
         else if (bullingFraza >= 75)
         {
@@ -107,6 +114,7 @@ public class FightSystem : MonoBehaviour
             you_health -= 70;
             Log("Противник чётко говорит о вашем личном...");
             Log("Вы больше всего не хотели это услышать");
+            statYOU.sprite = emoji[2];
         }
         enemyAnim.SetTrigger("punch");
         you_mana += 20;
@@ -126,12 +134,15 @@ public class FightSystem : MonoBehaviour
             SetFraza(youFrazi.bulling1[Random.Range(0, youFrazi.bulling1.Length)], false);
             Log("Вы читаете фразу на листке с слабым буллингом...");
             Log("Похоже это фраза не сильно его задела");
-        }else if(frazaItem.bulling == 2)
+            stasENEMY.sprite = emoji[0];
+        }
+        else if(frazaItem.bulling == 2)
         {
             SetFraza(youFrazi.bulling2[Random.Range(0, youFrazi.bulling2.Length)], false);
             enemy_health -= 50;
             Log("Вы читаете фразу на листке с умеренным буллингом...");
             Log("Вы замечаете что это его задело");
+            stasENEMY.sprite = emoji[1];
         }
         else if(frazaItem.bulling == 3)
         {
@@ -139,6 +150,7 @@ public class FightSystem : MonoBehaviour
             enemy_health -= 100;
             Log("Вы читаете фразу на листке с смертельным буллингом...");
             Log("Похоже не стоило это ему говорить");
+            stasENEMY.sprite = emoji[2];
         }
         youAnim.SetTrigger("punch");
         if(enemy_health <= 0)

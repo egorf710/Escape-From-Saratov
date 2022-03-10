@@ -63,15 +63,15 @@ public class PlayerController : MonoBehaviour
         moveVelocity = moveInput * speed;
 
         // уменьшении энергии
-        if(energy_Current > 0 && moveInput.magnitude != 0)
-        {
-            energy_Current -= Time.deltaTime;
-            energy_IndicatorInHUD.fillAmount = energy_Current / energy_Max;
-        }
+        //if(energy_Current > 0 && moveInput.magnitude != 0)
+        //{
+        //    energy_Current -= Time.deltaTime;
+        //    energy_IndicatorInHUD.fillAmount = energy_Current / energy_Max;
+        //}
         // время жизни
         if(lifeTime_Current > 0)
         {
-            lifeTime_Current -= Time.deltaTime;
+            lifeTime_Current -= Time.deltaTime * 0.5f;
             lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
             if(lifeTime_Current > 32)
             {
