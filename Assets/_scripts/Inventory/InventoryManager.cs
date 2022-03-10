@@ -121,7 +121,7 @@ public class InventoryManager : MonoBehaviour
                 go.AddComponent<SpriteRenderer>().sprite = item.sprite;
                 go.AddComponent<ItemObject>().item = item;
                 go.GetComponent<ItemObject>().amount = amount;
-                go.AddComponent<BoxCollider2D>();
+                go.AddComponent<BoxCollider2D>().isTrigger = true;
                 GameLog.AddAction("dropItem " + slot.item.itemName);
                 if (slot.amount <= 0)
                 {

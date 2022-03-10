@@ -887,6 +887,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4fa8054f3a86ad2408a2abc7704190bc, type: 2}
   - {fileID: 11400000, guid: 035d002d0adf9de44b83395cada65721, type: 2}
   - {fileID: 11400000, guid: 8ce4cd9c9eb3fbd4786f987774836bd3, type: 2}
+  - {fileID: 11400000, guid: 14154e851bafd6b409056b6d87c88919, type: 2}
   pageStory_obj: {fileID: 2132852725}
   pageQuests_obj: {fileID: 1254184102}
   pageItemInfo_obj: {fileID: 359133508}
@@ -1453,6 +1454,7 @@ GameObject:
   - component: {fileID: 250217001}
   - component: {fileID: 250217000}
   - component: {fileID: 250216999}
+  - component: {fileID: 250217002}
   m_Layer: 3
   m_Name: info_btt
   m_TagString: Untagged
@@ -1535,6 +1537,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 250217002}
+        m_TargetAssemblyTypeName: ADDLOG, Assembly-CSharp
+        m_MethodName: AddLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250217000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,6 +1587,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250216997}
   m_CullTransparentMesh: 1
+--- !u!114 &250217002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250216997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c7be31d7c74549abdb981dccff524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: openDescriptionItem
 --- !u!1001 &259203618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3162,6 +3189,7 @@ GameObject:
   - component: {fileID: 682410417}
   - component: {fileID: 682410416}
   - component: {fileID: 682410415}
+  - component: {fileID: 682410418}
   m_Layer: 3
   m_Name: info_btt
   m_TagString: Untagged
@@ -3244,6 +3272,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 682410418}
+        m_TargetAssemblyTypeName: ADDLOG, Assembly-CSharp
+        m_MethodName: AddLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682410416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3282,6 +3322,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682410413}
   m_CullTransparentMesh: 1
+--- !u!114 &682410418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682410413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c7be31d7c74549abdb981dccff524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: openDescriptionItem
 --- !u!1 &683583061
 GameObject:
   m_ObjectHideFlags: 0
@@ -4040,7 +4093,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -27.1}
-  m_SizeDelta: {x: 120.56639, y: 38.8116}
+  m_SizeDelta: {x: 122.39826, y: 38.8116}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822017764
 MonoBehaviour:
@@ -4150,6 +4203,7 @@ GameObject:
   - component: {fileID: 847509711}
   - component: {fileID: 847509710}
   - component: {fileID: 847509709}
+  - component: {fileID: 847509712}
   m_Layer: 3
   m_Name: info_btt
   m_TagString: Untagged
@@ -4232,6 +4286,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 847509712}
+        m_TargetAssemblyTypeName: ADDLOG, Assembly-CSharp
+        m_MethodName: AddLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &847509710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4270,6 +4336,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847509707}
   m_CullTransparentMesh: 1
+--- !u!114 &847509712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847509707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c7be31d7c74549abdb981dccff524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: openDescriptionItem
 --- !u!1 &849604818
 GameObject:
   m_ObjectHideFlags: 0
@@ -6238,6 +6317,7 @@ GameObject:
   - component: {fileID: 1275130040}
   - component: {fileID: 1275130039}
   - component: {fileID: 1275130038}
+  - component: {fileID: 1275130041}
   m_Layer: 3
   m_Name: info_btt
   m_TagString: Untagged
@@ -6320,6 +6400,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1275130041}
+        m_TargetAssemblyTypeName: ADDLOG, Assembly-CSharp
+        m_MethodName: AddLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1275130039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6358,6 +6450,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275130036}
   m_CullTransparentMesh: 1
+--- !u!114 &1275130041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275130036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c7be31d7c74549abdb981dccff524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: openDescriptionItem
 --- !u!4 &1282536205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7898818056606240391, guid: d76ecf3f480cbef4eb119cef2ecad3c5, type: 3}
@@ -8197,7 +8302,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -20.6}
-  m_SizeDelta: {x: 412, y: 65.391945}
+  m_SizeDelta: {x: 412, y: 66.39528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622445222
 MonoBehaviour:
@@ -9865,6 +9970,7 @@ GameObject:
   - component: {fileID: 1991327783}
   - component: {fileID: 1991327782}
   - component: {fileID: 1991327781}
+  - component: {fileID: 1991327784}
   m_Layer: 3
   m_Name: info_btt
   m_TagString: Untagged
@@ -9947,6 +10053,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1991327784}
+        m_TargetAssemblyTypeName: ADDLOG, Assembly-CSharp
+        m_MethodName: AddLog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1991327782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9985,6 +10103,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991327779}
   m_CullTransparentMesh: 1
+--- !u!114 &1991327784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991327779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c7be31d7c74549abdb981dccff524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action: openDescriptionItem
 --- !u!1 &2027560191
 GameObject:
   m_ObjectHideFlags: 0
@@ -10489,6 +10620,8 @@ MonoBehaviour:
   qyestItem:
   - {fileID: 11400000, guid: 66f119de2695f5445add928afafe30e9, type: 2}
   - {fileID: 11400000, guid: ce88102e73533ba4785b6177b76219d2, type: 2}
+  - {fileID: 11400000, guid: c51ffafcbea541749b4fccf6af4d851f, type: 2}
+  - {fileID: 11400000, guid: 9c5dd9c2977ff554b86886bbea30086f, type: 2}
   questInPrgcess: 0
 --- !u!58 &2141431335
 CircleCollider2D:

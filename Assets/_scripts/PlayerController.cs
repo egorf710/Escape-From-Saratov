@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         // время жизни
         if(lifeTime_Current > 0)
         {
+            if(lifeTime_Current > lifeTime_Max) { lifeTime_Current = lifeTime_Max; }
             lifeTime_Current -= Time.deltaTime * 0.5f;
             lifeTime_IndicatorInHUD.fillAmount = lifeTime_Current / lifeTime_Max;
             if(lifeTime_Current > 32)

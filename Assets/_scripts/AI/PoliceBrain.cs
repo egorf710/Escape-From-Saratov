@@ -55,7 +55,7 @@ public class PoliceBrain : MonoBehaviour
     }
     void UpdateText()
     {
-        if(angry <= 0)
+        if(angry <= -5)
         {
             smileInDialog.sprite = smiles[0];
             if (questInPrgcess)
@@ -70,7 +70,7 @@ public class PoliceBrain : MonoBehaviour
             }
             if (questProgress < qyestItem.Length)
             {
-                Log.toLog(" -ÇÀÄÀÍÈÅ- \n" + qyestItem[questProgress].descriptional + "\n ÒÛ ÏÎËÓ×ÈØÜ: " + qyestItem[questProgress].prise.itemName + "\n Ó ÒÅÁß: 10 ìèíóò");
+                Log.toLog(" -ÇÀÄÀÍÈÅ- \n" + qyestItem[questProgress].descriptional + "\n ÒÛ ÏÎËÓ×ÈØÜ: " + qyestItem[questProgress].prise.itemName + " " + qyestItem[questProgress].amount + "*" + "\n Ó ÒÅÁß: 10 ìèíóò");
                 questInPrgcess = true;
             }
             if (kop_or_zek)
