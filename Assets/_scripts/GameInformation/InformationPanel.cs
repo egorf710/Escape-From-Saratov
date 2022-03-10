@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class InformationPanel : MonoBehaviour
 {
-    [Header("Шаблоны страниц")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField] private PageStory[] pagesWithStory; // category = 1
     [SerializeField] private PageQuests[] pagesWithQuests; // category = 2
     [SerializeField] private PageItemInformation[] pagesWithGameInformation; // category = 3
 
-    [Header("Страница для отображение информации")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     [SerializeField] private GameObject pageStory_obj;
     [SerializeField] private GameObject pageQuests_obj;
     [SerializeField] private GameObject pageItemInfo_obj;
 
-    [Header("Номер страницы в UI")]
+    [Header("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ UI")]
     [SerializeField] private Text pageNum_UI;
 
-    // приватные переменные
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     int page;
     int category;
     int maxPagesInCategory;
@@ -101,28 +101,28 @@ public class InformationPanel : MonoBehaviour
         switch (category)
         {
             case 1:
-                pageStory_obj.transform.FindChild("Text").GetComponent<Text>().text = pagesWithStory[page]._descrition;
+                pageStory_obj.transform.Find("Text").GetComponent<Text>().text = pagesWithStory[page]._descrition;
                 break;
             case 2:
                 Debug.Log(page);
                 break;
             case 3:
-                pageItemInfo_obj.transform.FindChild("ItemName").GetComponent<Text>().text = pagesWithGameInformation[page]._name;
-                pageItemInfo_obj.transform.FindChild("ItemName").transform.FindChild("ItemSprite").GetComponent<Image>().sprite = pagesWithGameInformation[page]._sprite;
+                pageItemInfo_obj.transform.Find("ItemName").GetComponent<Text>().text = pagesWithGameInformation[page]._name;
+                pageItemInfo_obj.transform.Find("ItemName").transform.Find("ItemSprite").GetComponent<Image>().sprite = pagesWithGameInformation[page]._sprite;
 
                 string[] craftComponents = pagesWithGameInformation[page].itemsForCraft;
                 string craft;
 
                 if(!pagesWithGameInformation[page].isCrafting)
                 {
-                    craft = "Отсутсвует Крафт";
+                    craft = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ";
                 }
                 else
                 {
-                    craft = "Крафт: " + craftComponents[0] + " + " + craftComponents[1];
+                    craft = "пїЅпїЅпїЅпїЅпїЅ: " + craftComponents[0] + " + " + craftComponents[1];
                 }
 
-                pageItemInfo_obj.transform.FindChild("ItemDesc").GetComponent<Text>().text = pagesWithGameInformation[page]._description + "\n\n" + craft;
+                pageItemInfo_obj.transform.Find("ItemDesc").GetComponent<Text>().text = pagesWithGameInformation[page]._description + "\n\n" + craft;
 
                 break;
         }

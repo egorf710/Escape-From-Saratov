@@ -34,7 +34,7 @@ public class PoliceBrain : MonoBehaviour
     }
     public void Pohvala()
     {
-        if (angry >= 0)
+        if (angry >= -5)
         {
             angry -= 5;
         }
@@ -65,6 +65,7 @@ public class PoliceBrain : MonoBehaviour
                     FindObjectOfType<InventoryManager>().SpawnItem(qyestItem[questProgress].prise, qyestItem[questProgress].amount);
                     questProgress++;
                     questInPrgcess = false;
+                    angry = 0;
                 }
             }
             if (questProgress < qyestItem.Length)

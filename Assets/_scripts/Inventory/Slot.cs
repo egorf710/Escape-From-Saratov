@@ -108,6 +108,8 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         if (item == null) { return; }
         if (eventData.pointerCurrentRaycast.gameObject)
         {
+            iconSlot.transform.SetParent(transform);
+            iconSlot.GetComponent<RectTransform>().localPosition = Vector2.zero;
             if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>())
             {
                 Slot curSlot = eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>();
@@ -140,8 +142,11 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
                                 amount--;
                                 if (curSlot.amount <= 0) { curSlot.ClearSlot(); }
                                 if (amount <= 0) { ClearSlot(); }
-                                amountText.text = amount.ToString();
-                                curSlot.amountText.text = curSlot.amount.ToString();
+                                else
+                                {
+                                    amountText.text = amount.ToString();
+                                    curSlot.amountText.text = curSlot.amount.ToString();
+                                }
                                 break;
                             }
                         }
@@ -168,13 +173,15 @@ public class Slot : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
             }
         }
         iconSlot.transform.SetParent(transform);
-        iconSlot.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position; // <потеряно>
+        iconSlot.GetComponent<RectTransform>().localPosition = Vector2.zero;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (item == null) { return; }
-        if(item.point == 0 || item.bulling > 0) { return; }
+        iconSlot.transform.SetParent(transform);
+        iconSlot.GetComponent<RectTransform>().localPosition = Vector2.zero;
+        if (item.point == 0 || item.bulling > 0) { return; }
         if (eventData.clickCount >= 2)
         {
             inventoryManager.UseItem(this);

@@ -185,6 +185,7 @@ public class InventoryManager : MonoBehaviour
         }
         GameLog.AddAction("useItem " + slot.item.itemName);
         slot.amount--;
+        slot.amountText.text = slot.amount.ToString();
         if(slot.amount <= 0)
         {
             slot.ClearSlot();
