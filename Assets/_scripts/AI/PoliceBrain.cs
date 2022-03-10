@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PoliceBrain : MonoBehaviour
 {
+    [Header("имя перса")]
+    public string personName;// что игрок запоминал у кого берёт квест
     public DialogItem dialogItem;
     public Text dialogText;
     public bool inDialog;
@@ -135,5 +137,15 @@ public class PoliceBrain : MonoBehaviour
                 dialogText.text = "";
             }
         }
+    }
+    private void OnMouseOver()
+    {
+        dialogUI.SetActive(true);
+        dialogText.text = "погоняло: " + personName + "\n" + "квест:" + (questInPrgcess ? "выполняется" : "не выполняется");
+    }
+    public void OnMouseExit()
+    {
+        dialogUI.SetActive(false);
+        dialogText.text = "";
     }
 }
