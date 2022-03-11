@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Items
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 6761164967045977113, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 5508725064705088119, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -68751727340038015, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 6099581493293703690, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -5428206428529569624, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -7833671090200325546, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 5860025163644826426, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -7583409310137716746, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 980155311395259703, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -732356172534689064, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 8132948862792318974, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 2614870373251885436, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -2693009140137883590, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -956252262595852801, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 6738218706411903907, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -6338023803479276477, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 6395214293025444372, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: -4538752222985096420, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 4533227004153260592, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+    - {fileID: 2800000, guid: cd7c27427931c2c46a4778faf49811cf, type: 3}
+    - {fileID: 2800000, guid: 9adfcc76fbbc87d42ab080e357832897, type: 3}
+    - {fileID: 2800000, guid: 9ff26315fabc71f4c841baa689c617d6, type: 3}
+    totalSpriteSurfaceArea: 22528
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: cd7c27427931c2c46a4778faf49811cf, type: 3}
+  - {fileID: 21300000, guid: 9ff26315fabc71f4c841baa689c617d6, type: 3}
+  - {fileID: 21300000, guid: 9adfcc76fbbc87d42ab080e357832897, type: 3}
+  - {fileID: 6761164967045977113, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 5508725064705088119, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -68751727340038015, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 6099581493293703690, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -5428206428529569624, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -7833671090200325546, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 5860025163644826426, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -7583409310137716746, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 980155311395259703, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -732356172534689064, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -956252262595852801, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -2693009140137883590, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 2614870373251885436, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 8132948862792318974, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -4538752222985096420, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 6395214293025444372, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: -6338023803479276477, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 6738218706411903907, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  - {fileID: 4533227004153260592, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - soap
+  - energy_drink
+  - rope
+  - items_0
+  - items_1
+  - items_2
+  - items_3
+  - items_4
+  - items_5
+  - items_6
+  - items_7
+  - items_8
+  - items_9
+  - items_13
+  - items_12
+  - items_11
+  - items_10
+  - items_17
+  - items_16
+  - items_15
+  - items_14
+  - items_18
+  m_RenderDataMap: {}
+  m_Tag: Items
+  m_IsVariant: 0
