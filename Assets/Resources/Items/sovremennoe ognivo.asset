@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: sovremennoe ognivo
   m_EditorClassIdentifier: 
   itemName: sovremennoe ognivo
-  description: "\u0417\u0430\u0436\u0438\u0433\u0430\u043B\u043A\u0430"
-  sprite: {fileID: -6338023803479276477, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  sprite: {fileID: 6395214293025444372, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   point: 0
   stacable: 0
   recipes: []
