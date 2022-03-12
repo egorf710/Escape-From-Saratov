@@ -61,6 +61,7 @@ TextureImporter:
     second: items_18
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first:
       213: 1122774824596591943
     second: items_19
@@ -111,6 +112,8 @@ TextureImporter:
 >>>>>>> parent of 2d9a7f8 (квесты, предметы)
 =======
 >>>>>>> parent of 2d9a7f8 (квесты, предметы)
+=======
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
 =======
 >>>>>>> parent of d2e6f7a (квесты, новые предметы)
   externalObjects: {}
@@ -626,6 +629,7 @@ TextureImporter:
       weights: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - serializedVersion: 2
       name: items_19
       rect:
@@ -928,6 +932,8 @@ TextureImporter:
 >>>>>>> parent of 2d9a7f8 (квесты, предметы)
 =======
 >>>>>>> parent of 2d9a7f8 (квесты, предметы)
+=======
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
 =======
 >>>>>>> parent of d2e6f7a (квесты, новые предметы)
     outline: []

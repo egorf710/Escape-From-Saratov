@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: plan
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _name: "\u043F\u043B\u0430\u043D \u043F\u043E\u0431\u0435\u0433\u0430"
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -23,6 +24,9 @@ MonoBehaviour:
 >>>>>>> parent of 2d9a7f8 (квесты, предметы)
 =======
 >>>>>>> parent of 2d9a7f8 (квесты, предметы)
+=======
+  _name: plan
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
 =======
   _name: plan
 >>>>>>> parent of d2e6f7a (квесты, новые предметы)
