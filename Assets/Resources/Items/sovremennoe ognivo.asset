@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: sovremennoe ognivo
   m_EditorClassIdentifier: 
   itemName: sovremennoe ognivo
+<<<<<<< HEAD
   sprite: {fileID: -6338023803479276477, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+=======
+  sprite: {fileID: 6395214293025444372, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+>>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
   point: 0
   stacable: 0
   recipes:
