@@ -1016,12 +1016,15 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 11400000, guid: e3dac1dca3df4b54db97142fa8238893, type: 2}
 =======
   - {fileID: 11400000, guid: 539f3b85d45a63e4a8f32ae29cce0bf1, type: 2}
 >>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
 =======
 >>>>>>> parent of 5f718b4 (Дверь)
+=======
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
 =======
 >>>>>>> parent of d2e6f7a (квесты, новые предметы)
   pageStory_obj: {fileID: 2132852725}
