@@ -7,7 +7,6 @@ TagManager:
   - soap
   - energy drink
   - policeman
-  - door
   layers:
   - Default
   - TransparentFX

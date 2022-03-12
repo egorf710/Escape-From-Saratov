@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: bullingPaper2
   m_EditorClassIdentifier: 
   itemName: bullingPaper2
-  sprite: {fileID: -4058434812019303673, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  description: "\u041E\u0431\u0438\u0434\u043D\u044B\u0435 \u0444\u0440\u0430\u0437\u044B
+    \u0434\u043B\u044F \u0431\u0443\u043B\u043B\u0438\u043D\u0433\u0430"
+  sprite: {fileID: 6395214293025444372, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   point: 15
   stacable: 0
   recipes:
