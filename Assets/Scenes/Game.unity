@@ -1478,6 +1478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: zek (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 124325205341606466, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
+      propertyPath: personName
+      value: "\u0410\u0440\u0442\u0435\u043C\u0438\u0439"
+      objectReference: {fileID: 0}
     - target: {fileID: 124325205341606467, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -11991,6 +11995,10 @@ PrefabInstance:
     - target: {fileID: 124325205341606464, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
       propertyPath: m_Name
       value: zek (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 124325205341606466, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
+      propertyPath: personName
+      value: "\u041E\u043B\u0435\u0433"
       objectReference: {fileID: 0}
     - target: {fileID: 124325205341606467, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
       propertyPath: m_RootOrder
@@ -23561,6 +23569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: zek (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 124325205341606466, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
+      propertyPath: personName
+      value: "\u0410\u043B\u0435\u043A"
+      objectReference: {fileID: 0}
     - target: {fileID: 124325205341606467, guid: 0bd44559821fbbb4296bc7605c5c20a5, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -34595,6 +34607,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ce88102e73533ba4785b6177b76219d2, type: 2}
   - {fileID: 11400000, guid: c51ffafcbea541749b4fccf6af4d851f, type: 2}
   - {fileID: 11400000, guid: 9c5dd9c2977ff554b86886bbea30086f, type: 2}
+  - {fileID: 11400000, guid: 19503c3007b20ef40bebc82522dbb22b, type: 2}
+  - {fileID: 11400000, guid: 41607abccbbdb3e499bc93c70a4d9a7c, type: 2}
+  - {fileID: 11400000, guid: a5c3b0718946a014cb999698a0460950, type: 2}
+  - {fileID: 11400000, guid: b9e5f1a500c6f14498501a5bfdd1ce82, type: 2}
+  - {fileID: 11400000, guid: b98657fd40650434e86bda0fe7a61796, type: 2}
   questInPrgcess: 0
 --- !u!58 &2141431335
 CircleCollider2D:
