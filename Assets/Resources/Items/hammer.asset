@@ -15,6 +15,10 @@ MonoBehaviour:
   itemName: hammer
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  description: "\u041C\u043E\u043B\u043E\u0442\u043E\u043A"
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
   sprite: {fileID: -956252262595852801, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
 =======
   sprite: {fileID: 6738218706411903907, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
@@ -25,6 +29,5 @@ MonoBehaviour:
 >>>>>>> parent of 5f718b4 (Дверь)
   point: 0
   stacable: 0
-  recipes:
-  - hammer+board=addItem:karkas
+  recipes: []
   bulling: 0

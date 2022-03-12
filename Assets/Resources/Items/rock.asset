@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: rock
   m_EditorClassIdentifier: 
   itemName: rock
+  description: "\u041A\u0430\u043C\u0435\u043D\u044C"
   sprite: {fileID: -5428206428529569624, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   point: 0
   stacable: 1
   recipes:
-  - rock+lozka=addItem:zatochka
+  - rock+napilnik=addItem:zatochka
   bulling: 0

@@ -1015,12 +1015,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 14154e851bafd6b409056b6d87c88919, type: 2}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 11400000, guid: e3dac1dca3df4b54db97142fa8238893, type: 2}
 =======
   - {fileID: 11400000, guid: 539f3b85d45a63e4a8f32ae29cce0bf1, type: 2}
 >>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
 =======
 >>>>>>> parent of 5f718b4 (Дверь)
+=======
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
   pageStory_obj: {fileID: 2132852725}
   pageQuests_obj: {fileID: 1254184102}
   pageItemInfo_obj: {fileID: 359133508}
@@ -24164,8 +24167,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00040436, y: -24.917608}
-  m_SizeDelta: {x: 466.34, y: 221.0712}
+  m_AnchoredPosition: {x: 0, y: -20.6}
+  m_SizeDelta: {x: 412, y: 66.39528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622445222
 MonoBehaviour:
@@ -24174,7 +24177,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622445220}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -24195,7 +24198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -24205,9 +24208,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 410d32b03095cb646a12a20710e6d611, type: 3}
     m_FontSize: 21
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 31
+    m_MaxSize: 79
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 0

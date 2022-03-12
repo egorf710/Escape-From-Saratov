@@ -60,6 +60,7 @@ TextureImporter:
       213: 4533227004153260592
     second: items_18
 <<<<<<< HEAD
+<<<<<<< HEAD
   - first:
       213: 1122774824596591943
     second: items_19
@@ -107,6 +108,8 @@ TextureImporter:
 >>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
 =======
 >>>>>>> parent of 5f718b4 (Дверь)
+=======
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -606,7 +609,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -618,6 +621,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
 <<<<<<< HEAD
     - serializedVersion: 2
       name: items_19
@@ -982,6 +986,8 @@ TextureImporter:
 >>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
 =======
 >>>>>>> parent of 5f718b4 (Дверь)
+=======
+>>>>>>> parent of d2e6f7a (квесты, новые предметы)
     outline: []
     physicsShape: []
     bones: []
