@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: zatochka
   m_EditorClassIdentifier: 
   itemName: zatochka
-  sprite: {fileID: -2693009140137883590, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  sprite: {fileID: 2614870373251885436, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   point: 0
   stacable: 0
-  recipes: []
+  recipes:
+  - zatochka+melltal list=addItem:provolka
   bulling: 0

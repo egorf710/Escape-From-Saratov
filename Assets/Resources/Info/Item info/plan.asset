@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cec98d78a43f44f9d7492628e6ec88, type: 3}
   m_Name: plan
   m_EditorClassIdentifier: 
-  _name: plan
-  _sprite: {fileID: 8436657204533251546, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
+  _name: "\u043F\u043B\u0430\u043D \u043F\u043E\u0431\u0435\u0433\u0430"
+  _sprite: {fileID: 4533227004153260592, guid: 54b34e8eeba44fa459e604286ddcfb13, type: 3}
   _description: "\u041F\u043E\u0441\u0438\u0434\u0435\u0432 \u0437\u0434\u0435\u0441\u044C
     \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0434\u043E\u043B\u0433\u043E,
     \u043C\u043E\u0433\u0443 \u0441\u043A\u0430\u0437\u0430\u0442\u044C \u0447\u0442\u043E

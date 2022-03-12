@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Microsoft;
 public class Events : MonoBehaviour
 {
     //Соблюдаем читаемость кода, каждый евент подписываем и т.д
