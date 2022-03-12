@@ -59,7 +59,6 @@ TextureImporter:
   - first:
       213: 4533227004153260592
     second: items_18
-<<<<<<< HEAD
   - first:
       213: 1122774824596591943
     second: items_19
@@ -105,8 +104,6 @@ TextureImporter:
     second: items_32
 =======
 >>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
-=======
->>>>>>> parent of 5f718b4 (Дверь)
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -228,7 +225,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,7 +246,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,7 +267,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -291,7 +288,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -312,7 +309,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -333,7 +330,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -354,7 +351,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -375,7 +372,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -396,7 +393,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,7 +414,7 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -433,12 +430,12 @@ TextureImporter:
       name: items_10
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -454,12 +451,12 @@ TextureImporter:
       name: items_11
       rect:
         serializedVersion: 2
-        x: 96
+        x: 64
         y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -475,12 +472,12 @@ TextureImporter:
       name: items_12
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -496,12 +493,12 @@ TextureImporter:
       name: items_13
       rect:
         serializedVersion: 2
-        x: 160
+        x: 128
         y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -517,12 +514,12 @@ TextureImporter:
       name: items_14
       rect:
         serializedVersion: 2
-        x: 192
+        x: 160
         y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -538,12 +535,12 @@ TextureImporter:
       name: items_15
       rect:
         serializedVersion: 2
-        x: 224
+        x: 192
         y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -559,12 +556,12 @@ TextureImporter:
       name: items_16
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 224
+        y: 160
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -580,12 +577,12 @@ TextureImporter:
       name: items_17
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 64
+        y: 128
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -601,7 +598,7 @@ TextureImporter:
       name: items_18
       rect:
         serializedVersion: 2
-        x: 224
+        x: 96
         y: 128
         width: 32
         height: 32
@@ -618,7 +615,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-<<<<<<< HEAD
     - serializedVersion: 2
       name: items_19
       rect:
@@ -980,8 +976,6 @@ TextureImporter:
       weights: []
 =======
 >>>>>>> 5f718b4155aaedf50712c4ad0bd4e2f45fcebda1
-=======
->>>>>>> parent of 5f718b4 (Дверь)
     outline: []
     physicsShape: []
     bones: []

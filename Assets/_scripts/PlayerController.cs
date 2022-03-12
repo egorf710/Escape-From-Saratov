@@ -43,12 +43,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator player_animator;
     private PickUpItem pickUpItem;
     public FightSystem fightSystem;
+    private InventoryManager invManager;
 
     bool lowhp;
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         pickUpItem = GetComponent<PickUpItem>();
+        invManager = FindObjectOfType<InventoryManager>();
 
         energy_Current = energy_Max;
         lifeTime_Current = lifeTime_Max;
@@ -165,18 +167,15 @@ public class PlayerController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        return;
-        if(collision.tag == "soap")
+        if(collision.TryGetComponent<Door>(out Door _door))
         {
-            lifeTime_Current = Mathf.Clamp(lifeTime_Current + 5, 0, lifeTime_Max);
-            Destroy(collision.gameObject);
-        }
-        if(collision.tag == "energy drink")
-        {
-            energy_Current = Mathf.Clamp(energy_Current + 5, 0, energy_Max);
-            Destroy(collision.gameObject);
+            if(invManager.FindItem(_door.keyForUnlock.name) > 0)
+            {
+                _door.gameObject.SetActive(false);
+                invManager.RemoveItem(_door.keyForUnlock);
+            }
         }
     }
     public void UpdateIndicatorsUI()
