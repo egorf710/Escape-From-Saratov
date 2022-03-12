@@ -21,4 +21,4 @@ MonoBehaviour:
   action:
   - openDescriptionItem=all:1
   prise: {fileID: 11400000, guid: 2a1c58c3a517f284b9fc0cc910e06466, type: 2}
-  amount: 1
+  amount: 6

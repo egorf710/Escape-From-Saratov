@@ -1013,6 +1013,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 035d002d0adf9de44b83395cada65721, type: 2}
   - {fileID: 11400000, guid: 8ce4cd9c9eb3fbd4786f987774836bd3, type: 2}
   - {fileID: 11400000, guid: 14154e851bafd6b409056b6d87c88919, type: 2}
+  - {fileID: 11400000, guid: e3dac1dca3df4b54db97142fa8238893, type: 2}
   pageStory_obj: {fileID: 2132852725}
   pageQuests_obj: {fileID: 1254184102}
   pageItemInfo_obj: {fileID: 359133508}
@@ -24032,8 +24033,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20.6}
-  m_SizeDelta: {x: 412, y: 66.39528}
+  m_AnchoredPosition: {x: -0.00040436, y: -24.917608}
+  m_SizeDelta: {x: 466.34, y: 221.0712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1622445222
 MonoBehaviour:
@@ -24042,7 +24043,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622445220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -24063,7 +24064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -24073,9 +24074,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 410d32b03095cb646a12a20710e6d611, type: 3}
     m_FontSize: 21
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 79
+    m_MaxSize: 31
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 0
