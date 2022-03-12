@@ -59,6 +59,7 @@ TextureImporter:
   - first:
       213: 4533227004153260592
     second: items_18
+<<<<<<< HEAD
   - first:
       213: 1122774824596591943
     second: items_19
@@ -101,6 +102,8 @@ TextureImporter:
   - first:
       213: -8561806557982860685
     second: items_32
+=======
+>>>>>>> parent of 5f718b4 (Дверь)
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -612,6 +615,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD
     - serializedVersion: 2
       name: items_19
       rect:
@@ -906,6 +910,8 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+>>>>>>> parent of 5f718b4 (Дверь)
     outline: []
     physicsShape: []
     bones: []
